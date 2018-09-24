@@ -109,9 +109,9 @@ namespace CISP430_A2
         void insert(const value_type& entry);
         void attach(const value_type& entry);
         void remove_current( );
-		void resize(size_type );
-		//void sequence::operator =(const sequence&);
-		void operator =(const sequence&);
+	void resize(size_type );
+	//void sequence::operator =(const sequence&);
+	void operator =(const sequence&);
         // CONSTANT MEMBER FUNCTIONS
         size_type size( ) const;
         bool is_item( ) const;
