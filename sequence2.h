@@ -72,7 +72,7 @@
 //     Precondition: is_item( ) returns true.
 //     Postcondition: The item returned is the current item in the sequence.
 // Destructor
-//	 ~sequence()  
+//	 ~sequence()
 //     Postcondition: release the memory to the heap
 //
 // VALUE SEMANTICS for the sequence class:
@@ -81,7 +81,7 @@
 //void resize(size_type new_capacity )
 //Precondition: new_capacity > used
 // Postcondition: new space allocated and old space released
-   
+
 
 #ifndef SEQUENCE_H
 #define SEQUENCE_H
@@ -95,11 +95,13 @@ namespace CISP430_A2
         // TYPEDEFS and MEMBER CONSTANTS
         typedef double value_type;
         typedef size_t size_type;
+      // remember that enum sort of defines a custom data type; this one will
+      // be accessed by first stating the scope of sequence.
         enum { CAPACITY = 30 };
         // CONSTRUCTOR
         sequence(size_type entry=CAPACITY );
 		   // COPY CONSTRUCTOR
-        sequence(const sequence& entry)   ;       
+        sequence(const sequence& entry)   ;
     // Library facilities used: cstdlib
         // MODIFICATION MEMBER FUNCTIONS
         void start( );
@@ -119,7 +121,7 @@ namespace CISP430_A2
     private:
         value_type *data;
         size_type used;
-		size_type capacity;
+	size_type capacity;
         size_type current_index;
     };
 }
