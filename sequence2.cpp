@@ -22,6 +22,28 @@ sequence::sequence(size_type entry)
 	current_index = 0;
 	// the sequence has been constructed, and variables initialized.
 }
+
+sequence::sequence(const sequence& entry)
+{
+	// use overloaded assignment operation to initialize this object. 
+	*this = entry;
+	// just use assignment operation
+}
+
+void sequence::start()
+{
+	// go back to the first data point.
+	current_index = 0;
+}
+
+void sequence::attach(const value_type &entry)
+{
+	if(size() < capacity){
+		for(size_t i=used; i > current_index; i--){
+			
+		}
+	}
+}
 void sequence::operator =(const sequence& copySeq)
 {
 	// check for self-assignment.
@@ -48,11 +70,13 @@ void sequence::operator =(const sequence& copySeq)
 	current_index = copySeq.current_index;
 }
 
-void sequence::start()
+sequence::size_type sequence::size() const
 {
-	// go back to the first data point.
-	current_index = 0;
+	return used;
 }
+
+
+
 
 bool sequence::is_item() const
 {
@@ -84,12 +108,7 @@ void sequence::dispArray()
 }
 */
 
-sequence::sequence(const sequence& entry)
-{
-	// use overloaded assignment operation to initialize this object. 
-	*this = entry;
-	// just use assignment operation
-}
+
 
 sequence::~sequence()
 {

@@ -38,14 +38,14 @@
 //   void insert(const value_type& entry)
 //     Precondition: size( ) < CAPACITY. if this is not true then increase the capacity by 10%
 //     Postcondition: A new copy of entry has been inserted in the sequence
-//     before the current item. If there was no current item, then the new entry 
+//     before the current item. If there was no current item, then the new entry
 //     has been inserted at the front of the sequence. In either case, the newly
 //     inserted item is now the current item of the sequence.
 //
 //   void attach(const value_type& entry)
 //     Precondition: size( ) < CAPACITY.if this is not true then increase the capacity by 10%
 //     Postcondition: A new copy of entry has been inserted in the sequence after
-//     the current item. If there was no current item, then the new entry has 
+//     the current item. If there was no current item, then the new entry has
 //     been attached to the end of the sequence. In either case, the newly
 //     inserted item is now the current item of the sequence.
 //
@@ -111,9 +111,12 @@ namespace CISP430_A2
 		// Library facilities used: cstdlib
         // MODIFICATION MEMBER FUNCTIONS
         void start( );
-		/* void advance( );
+		/*
+		void advance( );
 		void insert(const value_type& entry);
+		*/
         void attach(const value_type& entry);
+		/*
         void remove_current( );
 		void resize(size_type);
 		*/
