@@ -95,33 +95,43 @@ namespace CISP430_A2
         // TYPEDEFS and MEMBER CONSTANTS
         typedef double value_type;
         typedef size_t size_type;
-      // remember that enum sort of defines a custom data type; this one will
-      // be accessed by first stating the scope of sequence.
+		// remember that enum sort of defines a custom data type; this one will
+		// be accessed by first stating the scope of sequence.
         enum { CAPACITY = 30 };
         // CONSTRUCTOR
         sequence(size_type entry=CAPACITY );
-		   // COPY CONSTRUCTOR
-        sequence(const sequence& entry)   ;
-    // Library facilities used: cstdlib
+		// COPY CONSTRUCTOR
+        sequence(const sequence& entry);
+
+		//TEMPORARY FUNCTIONS DELETE LATER!!
+		/*
+		void dispArray();
+		void popArray(const double nums[], size_t amount);
+		*/
+		// Library facilities used: cstdlib
         // MODIFICATION MEMBER FUNCTIONS
         void start( );
-        void advance( );
-        void insert(const value_type& entry);
+		/* void advance( );
+		void insert(const value_type& entry);
         void attach(const value_type& entry);
         void remove_current( );
-	void resize(size_type );
-	//void sequence::operator =(const sequence&);
-	void operator =(const sequence&);
+		void resize(size_type);
+		*/
+		//void sequence::operator =(const sequence&);
+		void operator =(const sequence&);
         // CONSTANT MEMBER FUNCTIONS
-        size_type size( ) const;
+		size_type size( ) const;
+
         bool is_item( ) const;
+		/*
         value_type current( ) const;
+		*/
 		//Destructor
-		 ~sequence()  ;
+		~sequence();
     private:
         value_type *data;
         size_type used;
-	size_type capacity;
+		size_type capacity;
         size_type current_index;
     };
 }
