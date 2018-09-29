@@ -1,3 +1,7 @@
+// CISP A2
+// Written By Jacob Hernandez
+// Purpose of Program: Dynamically store sequences of data in an object. 
+
 // FILE: sequence1.h
 // CLASS PROVIDED: sequence (part of the namespace CISP430_A2)
 // There is no implementation file provided for this class since it is
