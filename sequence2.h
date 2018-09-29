@@ -102,33 +102,21 @@ namespace CISP430_A2
         sequence(size_type entry=CAPACITY );
 		// COPY CONSTRUCTOR
         sequence(const sequence& entry);
-
-		//TEMPORARY FUNCTIONS DELETE LATER!!
-		/*
-		void dispArray();
-		void popArray(const double nums[], size_t amount);
-		*/
 		// Library facilities used: cstdlib
         // MODIFICATION MEMBER FUNCTIONS
         void start( );
-		/*
 		void advance( );
 		void insert(const value_type& entry);
-		*/
         void attach(const value_type& entry);
-		/*
         void remove_current( );
 		void resize(size_type);
-		*/
 		//void sequence::operator =(const sequence&);
 		void operator =(const sequence&);
         // CONSTANT MEMBER FUNCTIONS
 		size_type size( ) const;
 
         bool is_item( ) const;
-		/*
         value_type current( ) const;
-		*/
 		//Destructor
 		~sequence();
     private:
