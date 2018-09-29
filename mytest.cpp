@@ -3,17 +3,25 @@
 
 using namespace std;
 using namespace CISP430_A2;
+void printSeq(sequence mySeq);
 
 int main()
 {
-	sequence mySequence;
-	mySequence.attach(1);
-	mySequence.attach(2);
-	mySequence.attach(3);
-	mySequence.attach(4);
-	for (mySequence.start(); mySequence.is_item(); mySequence.advance())
-	{
-		cout << mySequence.current() << endl;
+	sequence original; // A sequence that we'll copy.
+	for(double i = 0; i < 60; i++){
+		original.attach(i);
 	}
-	return 0;
+	printSeq(original);
+	cout << "original's current is " << original.current();
+	sequence copy(original);
+	cout << "copy's current is " << copy.current();
+	printSeq(copy);
+}
+
+void printSeq(sequence mySeq)
+{
+	for (mySeq.start(); mySeq.is_item(); mySeq.advance())
+		{
+			cout << mySeq.current() << endl;
+		}
 }

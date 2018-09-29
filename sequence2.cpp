@@ -21,9 +21,13 @@ sequence::sequence(size_type entry)
 
 sequence::sequence(const sequence& entry)
 {
-	// use overloaded assignment operation to initialize this object. 
-	*this = entry;
-	// just use assignment operation
+	data = new value_type[entry.capacity];
+	capacity = entry.capacity;
+	used = entry.used;
+	current_index = entry.current_index;
+	for(size_t i = 0; i < entry.used; i++){
+		data[i] = entry.data[i];
+	}
 }
 
 void sequence::start()
@@ -69,6 +73,9 @@ void sequence::insert(const value_type &entry)
 		used++;
 		// and end the function
 		return;
+	}
+	if (!is_item()){
+		start();
 	}
 	// start from the end of the entered data. keep moving everything one slot
 	// to the right, until we get to the current index where we will insert the new number.
@@ -196,7 +203,6 @@ void sequence::operator =(const sequence& copySeq)
 	data = new value_type[copySeq.capacity];
 	// put each datum into the new array
 	for(size_t i = 0; i < copySeq.used; i++){
-		// each index of this object's new array gets the data from the copying object.
 		data[i] = copySeq.data[i];
 	}
 	// assign the amount used from the one being assigned to the current
